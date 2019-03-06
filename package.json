@@ -1,0 +1,46 @@
+{
+  "name": "react-native-sdwebimage",
+  "title": "React Native SDWebImage",
+  "version": "1.0.0",
+  "description": "SDWebImage for React Native iOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "hhttps://github.com/thanhcuong1990/react-native-SDWebImage",
+  "bugs": {
+    "url": "https://github.com/thanhcuong1990/react-native-SDWebImage/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhcuong1990/react-native-SDWebImage.git",
+    "baseUrl": "https://github.com/thanhcuong1990/react-native-SDWebImage"
+  },
+  "keywords": [
+    "react-native",
+    "image",
+    "cached",
+    "priority",
+    "ios",
+    "react-native-SDWebImage",
+    "RNSDWebImage",
+    "SDWebImage"
+  ],
+  "author": {
+    "name": "Cuong Lam",
+    "email": "thanhcuong1990@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "16.6.3",
+    "react-native": "0.58.6",
+    "negotiator": ">=0.6.1",
+    "fresh": ">=0.5.2"
+  },
+  "devDependencies": {
+    "react": "16.6.3",
+    "react-native": "0.58.6"
+  }
+}

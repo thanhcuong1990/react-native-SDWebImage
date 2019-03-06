@@ -1,0 +1,40 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'RNSDWebImage' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+  inhibit_all_warnings!
+
+  # Pods for RNSDWebImage
+  pod 'SDWebImage/Core'
+  pod 'SDWebImage/GIF'
+  pod 'SDWebImage/WebP'
+  pod 'FLAnimatedImage'
+
+  rn_path = '../node_modules/react-native'
+  pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
+  pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs/DoubleConversion.podspec"
+  pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
+  pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
+
+  # React Native requirements
+  pod 'React', path: rn_path, subspecs: [
+    'Core',
+    'CxxBridge',
+    'RCTImage',
+    'RCTSettings',
+    'DevSupport'
+  ]
+
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == "React"
+      target.remove_from_project
+    end
+  end
+end
+
+install! 'cocoapods', :deterministic_uuids => false, :integrate_targets => true
