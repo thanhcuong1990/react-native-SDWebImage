@@ -26,21 +26,19 @@
     "RNSDWebImage",
     "SDWebImage"
   ],
-  "author": {
-    "name": "Cuong Lam",
-    "email": "thanhcuong1990@gmail.com"
-  },
+  "author": "Cuong Lam <thanhcuong1990@gmail.com>",
   "license": "Apache-2.0",
   "licenseFilename": "LICENSE",
-  "readmeFilename": "README.md",
   "peerDependencies": {
+    "prop-types": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
     "react": "16.6.3",
     "react-native": "0.58.6",
     "negotiator": ">=0.6.1",
     "fresh": ">=0.5.2"
   },
-  "devDependencies": {
-    "react": "16.6.3",
-    "react-native": "0.58.6"
-  }
+  "dependencies": {}
 }

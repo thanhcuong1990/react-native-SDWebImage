@@ -4,6 +4,7 @@ docs
 # Build
 android/build
 ios/build
+ios/Pods
 react-native-SDWebImage-*.tgz
 
 # We need to ignore some things in submodules.

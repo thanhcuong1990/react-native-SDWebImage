@@ -1,26 +1,12 @@
 PODS:
-  - boost (1.59.0):
-    - boost/graph-includes (= 1.59.0)
-    - boost/math-includes (= 1.59.0)
-    - boost/numeric-includes (= 1.59.0)
-    - boost/pointer_cast-includes (= 1.59.0)
-    - boost/preprocessor-includes (= 1.59.0)
-    - boost/shared_ptr-includes (= 1.59.0)
-    - boost/string_algorithms-includes (= 1.59.0)
-  - boost/graph-includes (1.59.0)
-  - boost/math-includes (1.59.0)
-  - boost/numeric-includes (1.59.0)
-  - boost/pointer_cast-includes (1.59.0)
-  - boost/preprocessor-includes (1.59.0)
-  - boost/shared_ptr-includes (1.59.0)
-  - boost/string_algorithms-includes (1.59.0)
-  - DoubleConversion (1.1.5)
+  - boost-for-react-native (1.63.0)
+  - DoubleConversion (1.1.6)
   - FLAnimatedImage (1.0.12)
-  - Folly (2016.09.26.00):
-    - boost
+  - Folly (2018.10.22.00):
+    - boost-for-react-native
     - DoubleConversion
-    - GLog
-  - GLog (0.3.4)
+    - glog
+  - glog (0.3.5)
   - libwebp (1.0.2):
     - libwebp/core (= 1.0.2)
     - libwebp/dec (= 1.0.2)
@@ -45,36 +31,38 @@ PODS:
   - libwebp/utils (1.0.2):
     - libwebp/core
   - libwebp/webp (1.0.2)
-  - React/Core (0.52.3):
-    - yoga (= 0.52.3.React)
-  - React/CxxBridge (0.52.3):
-    - Folly (= 2016.09.26.00)
+  - React/Core (0.58.6):
+    - yoga (= 0.58.6.React)
+  - React/CxxBridge (0.58.6):
+    - Folly (= 2018.10.22.00)
     - React/Core
     - React/cxxreact
-  - React/cxxreact (0.52.3):
-    - boost
-    - Folly (= 2016.09.26.00)
-    - React/jschelpers
+    - React/jsiexecutor
+  - React/cxxreact (0.58.6):
+    - boost-for-react-native (= 1.63.0)
+    - Folly (= 2018.10.22.00)
     - React/jsinspector
-  - React/DevSupport (0.52.3):
+  - React/DevSupport (0.58.6):
     - React/Core
     - React/RCTWebSocket
-  - React/fishhook (0.52.3)
-  - React/jschelpers (0.52.3):
-    - Folly (= 2016.09.26.00)
-    - React/PrivateDatabase
-  - React/jsinspector (0.52.3)
-  - React/PrivateDatabase (0.52.3)
-  - React/RCTBlob (0.52.3):
+  - React/fishhook (0.58.6)
+  - React/jsi (0.58.6):
+    - Folly (= 2018.10.22.00)
+  - React/jsiexecutor (0.58.6):
+    - Folly (= 2018.10.22.00)
+    - React/cxxreact
+    - React/jsi
+  - React/jsinspector (0.58.6)
+  - React/RCTBlob (0.58.6):
     - React/Core
-  - React/RCTImage (0.52.3):
+  - React/RCTImage (0.58.6):
     - React/Core
     - React/RCTNetwork
-  - React/RCTNetwork (0.52.3):
+  - React/RCTNetwork (0.58.6):
     - React/Core
-  - React/RCTSettings (0.52.3):
+  - React/RCTSettings (0.58.6):
     - React/Core
-  - React/RCTWebSocket (0.52.3):
+  - React/RCTWebSocket (0.58.6):
     - React/Core
     - React/fishhook
     - React/RCTBlob
@@ -85,13 +73,13 @@ PODS:
   - SDWebImage/WebP (4.4.6):
     - libwebp (>= 0.5)
     - SDWebImage/Core
-  - yoga (0.52.3.React)
+  - yoga (0.58.6.React)
 
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FLAnimatedImage
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
-  - GLog (from `../node_modules/react-native/third-party-podspecs/GLog.podspec`)
+  - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -104,7 +92,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - boost
+    - boost-for-react-native
     - FLAnimatedImage
     - libwebp
     - SDWebImage
@@ -114,24 +102,24 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
-  GLog:
-    :podspec: "../node_modules/react-native/third-party-podspecs/GLog.podspec"
+  glog:
+    :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
 SPEC CHECKSUMS:
-  boost: d8df75f3e409e1de63ca866d0ddcea2c70153662
-  DoubleConversion: ebb6747c5b66026ad4f97b789c3ceac6f18e57a6
+  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  Folly: b7255b29f1d693c375d642d0f04f0592181156d9
-  GLog: 3e4e4ae9746ce6bf6e9420c7fc1e08ad59c8ba1a
+  Folly: de497beb10f102453a1afa9edbf8cf8a251890de
+  glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
-  React: c0dfd2dfc970019d1ae7d48bf24cef530992e079
+  React: 130b87b2d5e2baac646954282cab87be986d98fc
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
-  yoga: f45a46b966e1eb0c7a532cfd4beec5b97332ba48
+  yoga: 32d7ef1081951e9a35a4c72a7be797598b138a48
 
-PODFILE CHECKSUM: fe5120e41ac90b7447a07d3cea1e9ccaefe20997
+PODFILE CHECKSUM: 78c15435fb655b8e98c14f6428a3d0edb0264e77
 
 COCOAPODS: 1.6.1
