@@ -10,7 +10,9 @@ import {
   Image
 } from 'react-native'
 
-const WebImageViewNativeModule = NativeModules.WebImageView
+const isAndroid = (Platform.OS === 'android')
+
+const WebImageViewNativeModule = isAndroid ? null : NativeModules.WebImageView
 
 const RNSDWebImage = forwardRef(
   (
@@ -30,21 +32,18 @@ const RNSDWebImage = forwardRef(
   ) => {
     const resolvedSource = Image.resolveAssetSource(source)
     const isLocalImage = (typeof source === 'number')
-    if (Platform.OS === 'android' || isLocalImage || fallback ) {
+    if (isAndroid || isLocalImage || fallback ) {
       return (
-        <View style={[styles.imageContainer, style]} ref={ref}>
-          <Image
-            {...props}
-            style={StyleSheet.absoluteFill}
-            source={resolvedSource}
-            onLoadStart={onLoadStart}
-            onProgress={onProgress}
-            onLoad={onLoad}
-            onError={onError}
-            onLoadEnd={onLoadEnd}
-          />
-          {children}
-        </View>
+        <Image
+          {...props}
+          style={style}
+          source={resolvedSource}
+          onLoadStart={onLoadStart}
+          onProgress={onProgress}
+          onLoad={onLoad}
+          onError={onError}
+          onLoadEnd={onLoadEnd}
+        />
       )
     }
 
@@ -95,6 +94,7 @@ RNSDWebImage.cacheControl = {
 }
 
 RNSDWebImage.preload = sources => {
+
   WebImageViewNativeModule.preload(sources)
 }
 
@@ -120,7 +120,8 @@ RNSDWebImage.propTypes = {
   fallback: PropTypes.bool
 }
 
-const WebImageView = requireNativeComponent('WebImageView', RNSDWebImage, {
+
+const WebImageView = isAndroid ? null : requireNativeComponent('WebImageView', RNSDWebImage, {
   nativeOnly: {
     onWebImageLoadStart: true,
     onWebImageProgress: true,
