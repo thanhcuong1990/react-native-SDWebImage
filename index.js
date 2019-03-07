@@ -30,7 +30,7 @@ const RNSDWebImage = forwardRef(
   ) => {
     const resolvedSource = Image.resolveAssetSource(source)
     const isLocalImage = (typeof source === 'number')
-    if (Platform.OS === 'android' || isLocalImage ||fallback ) {
+    if (Platform.OS === 'android' || isLocalImage || fallback ) {
       return (
         <View style={[styles.imageContainer, style]} ref={ref}>
           <Image
