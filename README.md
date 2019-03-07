@@ -6,9 +6,10 @@
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-sdwebimage`
-
-`$ cd ios && pod install`
+```
+$ react-native link react-native-sdwebimage
+$ cd ios && pod install
+```
 
 ### Manual installation
 #### iOS
