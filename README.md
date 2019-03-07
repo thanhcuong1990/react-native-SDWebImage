@@ -7,10 +7,9 @@
 ### Mostly automatic installation
 
 `$ react-native link react-native-sdwebimage`
+`$ cd ios && pod install`
 
 ### Manual installation
-
-
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
@@ -23,6 +22,12 @@
 ```javascript
 import RNSDWebImage from 'react-native-sdwebimage';
 
-// TODO: What to do with the module?
-RNSDWebImage;
+<RNSDWebImage
+  style={{ width: 100, height: 100 }}
+  source={{
+    uri: 'https://i.imgur.com/Hep1hx2.jpg',
+    priority: RNSDWebImage.priority.high
+  }}
+  resizeMode="cover"
+/>
 ```
