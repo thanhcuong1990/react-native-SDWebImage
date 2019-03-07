@@ -94,7 +94,7 @@ RNSDWebImage.cacheControl = {
 }
 
 RNSDWebImage.preload = sources => {
-
+  if (isAndroid) { return }
   WebImageViewNativeModule.preload(sources)
 }
 
