@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import {
+  Platform,
   NativeModules,
   requireNativeComponent,
   ViewPropTypes,
@@ -28,8 +29,8 @@ const RNSDWebImage = forwardRef(
     ref
   ) => {
     const resolvedSource = Image.resolveAssetSource(source)
-
-    if (fallback) {
+    const isLocalImage = (typeof source === 'number')
+    if (Platform.OS === 'android' || isLocalImage ||fallback ) {
       return (
         <View style={[styles.imageContainer, style]} ref={ref}>
           <Image

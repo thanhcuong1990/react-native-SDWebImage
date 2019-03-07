@@ -22,28 +22,28 @@
     }
 }
 
-- (void)setonWebImageLoadEnd:(RCTBubblingEventBlock)onWebImageLoadEnd {
+- (void)setOnWebImageLoadEnd:(RCTBubblingEventBlock)onWebImageLoadEnd {
     _onWebImageLoadEnd = onWebImageLoadEnd;
     if (hasCompleted) {
         _onWebImageLoadEnd(@{});
     }
 }
 
-- (void)setonWebImageLoad:(RCTBubblingEventBlock)onWebImageLoad {
+- (void)setOnWebImageLoad:(RCTBubblingEventBlock)onWebImageLoad {
     _onWebImageLoad = onWebImageLoad;
     if (hasCompleted) {
         _onWebImageLoad(onLoadEvent);
     }
 }
 
-- (void)setonWebImageError:(RCTDirectEventBlock)onWebImageError {
+- (void)setOnWebImageError:(RCTDirectEventBlock)onWebImageError {
     _onWebImageError = onWebImageError;
     if (hasErrored) {
         _onWebImageError(@{});
     }
 }
 
-- (void)setonWebImageLoadStart:(RCTBubblingEventBlock)onWebImageLoadStart {
+- (void)setOnWebImageLoadStart:(RCTBubblingEventBlock)onWebImageLoadStart {
     if (_source && !hasSentOnLoadStart) {
         _onWebImageLoadStart = onWebImageLoadStart;
         onWebImageLoadStart(@{});
