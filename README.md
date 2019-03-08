@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://www.npmjs.com/package/react-native-sdwebimage">
+  <a href="https://github.com/thanhcuong1990/react-native-SDWebImage">
     SDWebImage for React Native iOS
   </a>
 </h1>
@@ -49,3 +49,9 @@ import RNSDWebImage from 'react-native-sdwebimage';
   resizeMode="cover"
 />
 ```
+
+## 📄 License
+
+React Native SDWebImage is MIT licensed, as found in the [LICENSE][l] file.
+
+[l]: https://github.com/thanhcuong1990/react-native-SDWebImage/blob/master/LICENSE
