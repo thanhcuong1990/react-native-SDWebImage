@@ -1,4 +1,20 @@
-# react-native-sdwebimage
+<h1 align="center">
+  <a href="https://www.npmjs.com/package/react-native-sdwebimage">
+    SDWebImage for React Native iOS
+  </a>
+</h1>
+
+<p align="center">
+  <a href="https://github.com/thanhcuong1990/react-native-SDWebImage/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="React Native SDWebImage is released under the MIT license." />
+  </a>
+  <a href="https://www.npmjs.com/package/react-native-sdwebimage">
+    <img src="https://badge.fury.io/js/react-native-sdwebimage.svg" alt="Current npm package version." />
+  </a>
+  <a href="https://github.com/thanhcuong1990/react-native-SDWebImage/pulls">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+  </a>
+</p>
 
 ## Getting started
 
