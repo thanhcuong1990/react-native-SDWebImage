@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-  <a href="https://github.com/thanhcuong1990/react-native-SDWebImage/master/LICENSE">
+  <a href="https://github.com/thanhcuong1990/react-native-SDWebImage/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="React Native SDWebImage is released under the MIT license." />
   </a>
   <a href="https://www.npmjs.com/package/react-native-sdwebimage">
