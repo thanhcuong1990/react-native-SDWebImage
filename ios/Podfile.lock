@@ -31,38 +31,44 @@ PODS:
   - libwebp/utils (1.0.2):
     - libwebp/core
   - libwebp/webp (1.0.2)
-  - React/Core (0.58.6):
-    - yoga (= 0.58.6.React)
-  - React/CxxBridge (0.58.6):
+  - React/Core (0.59.5):
+    - yoga (= 0.59.5.React)
+  - React/CxxBridge (0.59.5):
     - Folly (= 2018.10.22.00)
     - React/Core
     - React/cxxreact
     - React/jsiexecutor
-  - React/cxxreact (0.58.6):
+  - React/cxxreact (0.59.5):
     - boost-for-react-native (= 1.63.0)
+    - DoubleConversion
     - Folly (= 2018.10.22.00)
+    - glog
     - React/jsinspector
-  - React/DevSupport (0.58.6):
+  - React/DevSupport (0.59.5):
     - React/Core
     - React/RCTWebSocket
-  - React/fishhook (0.58.6)
-  - React/jsi (0.58.6):
+  - React/fishhook (0.59.5)
+  - React/jsi (0.59.5):
+    - DoubleConversion
     - Folly (= 2018.10.22.00)
-  - React/jsiexecutor (0.58.6):
+    - glog
+  - React/jsiexecutor (0.59.5):
+    - DoubleConversion
     - Folly (= 2018.10.22.00)
+    - glog
     - React/cxxreact
     - React/jsi
-  - React/jsinspector (0.58.6)
-  - React/RCTBlob (0.58.6):
+  - React/jsinspector (0.59.5)
+  - React/RCTBlob (0.59.5):
     - React/Core
-  - React/RCTImage (0.58.6):
+  - React/RCTImage (0.59.5):
     - React/Core
     - React/RCTNetwork
-  - React/RCTNetwork (0.58.6):
+  - React/RCTNetwork (0.59.5):
     - React/Core
-  - React/RCTSettings (0.58.6):
+  - React/RCTSettings (0.59.5):
     - React/Core
-  - React/RCTWebSocket (0.58.6):
+  - React/RCTWebSocket (0.59.5):
     - React/Core
     - React/fishhook
     - React/RCTBlob
@@ -73,7 +79,7 @@ PODS:
   - SDWebImage/WebP (4.4.6):
     - libwebp (>= 0.5)
     - SDWebImage/Core
-  - yoga (0.58.6.React)
+  - yoga (0.59.5.React)
 
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
@@ -116,9 +122,9 @@ SPEC CHECKSUMS:
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
-  React: 130b87b2d5e2baac646954282cab87be986d98fc
+  React: 90adac468c7b72bf1fa6c64bf230650f851a8388
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
-  yoga: 32d7ef1081951e9a35a4c72a7be797598b138a48
+  yoga: 2e571f113e8cbeb0eb752aeebc86c1bfe7a8200c
 
 PODFILE CHECKSUM: 78c15435fb655b8e98c14f6428a3d0edb0264e77
 
