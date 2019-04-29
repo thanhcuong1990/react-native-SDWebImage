@@ -38,10 +38,10 @@
     "react-native": "*"
   },
   "devDependencies": {
-    "react": "16.6.3",
-    "react-native": "0.58.6",
+    "fresh": ">=0.5.2",
     "negotiator": ">=0.6.1",
-    "fresh": ">=0.5.2"
+    "react": "^16.8.6",
+    "react-native": "^0.59.5"
   },
   "dependencies": {}
 }

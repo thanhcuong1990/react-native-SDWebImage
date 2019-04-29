@@ -1,11 +1,17 @@
 #import "WebImageView.h"
 
-@implementation WebImageView {
-    BOOL hasSentOnLoadStart;
-    BOOL hasCompleted;
-    BOOL hasErrored;
-    NSDictionary* onLoadEvent;
-}
+
+@interface WebImageView()
+
+@property (nonatomic, assign) BOOL hasSentOnLoadStart;
+@property (nonatomic, assign) BOOL hasCompleted;
+@property (nonatomic, assign) BOOL hasErrored;
+
+@property (nonatomic, strong) NSDictionary* onLoadEvent;
+
+@end
+
+@implementation WebImageView
 
 - (id) init {
     self = [super init];
@@ -14,94 +20,92 @@
     return self;
 }
 
-- (void)setResizeMode:(RCTResizeMode)resizeMode
-{
+- (void)setResizeMode:(RCTResizeMode)resizeMode {
     if (_resizeMode != resizeMode) {
         _resizeMode = resizeMode;
         self.contentMode = (UIViewContentMode)resizeMode;
     }
 }
 
-- (void)setOnWebImageLoadEnd:(RCTBubblingEventBlock)onWebImageLoadEnd {
+- (void)setOnWebImageLoadEnd:(RCTDirectEventBlock)onWebImageLoadEnd {
     _onWebImageLoadEnd = onWebImageLoadEnd;
-    if (hasCompleted) {
+    if (self.hasCompleted) {
         _onWebImageLoadEnd(@{});
     }
 }
 
-- (void)setOnWebImageLoad:(RCTBubblingEventBlock)onWebImageLoad {
+- (void)setOnWebImageLoad:(RCTDirectEventBlock)onWebImageLoad {
     _onWebImageLoad = onWebImageLoad;
-    if (hasCompleted) {
-        _onWebImageLoad(onLoadEvent);
+    if (self.hasCompleted) {
+        _onWebImageLoad(self.onLoadEvent);
     }
 }
 
 - (void)setOnWebImageError:(RCTDirectEventBlock)onWebImageError {
     _onWebImageError = onWebImageError;
-    if (hasErrored) {
+    if (self.hasErrored) {
         _onWebImageError(@{});
     }
 }
 
-- (void)setOnWebImageLoadStart:(RCTBubblingEventBlock)onWebImageLoadStart {
-    if (_source && !hasSentOnLoadStart) {
+- (void)setOnWebImageLoadStart:(RCTDirectEventBlock)onWebImageLoadStart {
+    if (_source && !self.hasSentOnLoadStart) {
         _onWebImageLoadStart = onWebImageLoadStart;
         onWebImageLoadStart(@{});
-        hasSentOnLoadStart = YES;
+        self.hasSentOnLoadStart = YES;
     } else {
         _onWebImageLoadStart = onWebImageLoadStart;
-        hasSentOnLoadStart = NO;
+        self.hasSentOnLoadStart = NO;
     }
 }
 
 - (void)sendOnLoad:(UIImage *)image {
-    onLoadEvent = @{
-                    @"width":[NSNumber numberWithDouble:image.size.width],
-                    @"height":[NSNumber numberWithDouble:image.size.height]
-                    };
-    if (_onWebImageLoad) {
-        _onWebImageLoad(onLoadEvent);
+    self.onLoadEvent = @{
+                         @"width":[NSNumber numberWithDouble:image.size.width],
+                         @"height":[NSNumber numberWithDouble:image.size.height]
+                         };
+    if (self.onWebImageLoad) {
+        self.onWebImageLoad(self.onLoadEvent);
     }
 }
 
 - (void)setSource:(WebImageSource *)source {
     if (_source != source) {
         _source = source;
-        
+
         // Load base64 images.
         NSString* url = [_source.url absoluteString];
         if (url && [url hasPrefix:@"data:image"]) {
-            if (_onWebImageLoadStart) {
-                _onWebImageLoadStart(@{});
-                hasSentOnLoadStart = YES;
+            if (self.onWebImageLoadStart) {
+                self.onWebImageLoadStart(@{});
+                self.hasSentOnLoadStart = YES;
             } {
-                hasSentOnLoadStart = NO;
+                self.hasSentOnLoadStart = NO;
             }
             UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:_source.url]];
             [self setImage:image];
-            if (_onWebImageProgress) {
-                _onWebImageProgress(@{
-                                       @"loaded": @(1),
-                                       @"total": @(1)
-                                       });
+            if (self.onWebImageProgress) {
+                self.onWebImageProgress(@{
+                                           @"loaded": @(1),
+                                           @"total": @(1)
+                                           });
             }
-            hasCompleted = YES;
+            self.hasCompleted = YES;
             [self sendOnLoad:image];
-            
-            if (_onWebImageLoadEnd) {
-                _onWebImageLoadEnd(@{});
+
+            if (self.onWebImageLoadEnd) {
+                self.onWebImageLoadEnd(@{});
             }
             return;
         }
-        
+
         // Set headers.
         [_source.headers enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString* header, BOOL *stop) {
             [[SDWebImageDownloader sharedDownloader] setValue:header forHTTPHeaderField:key];
         }];
-        
+
         // Set priority.
-        SDWebImageOptions options = 0;
-        options |= SDWebImageRetryFailed;
+        SDWebImageOptions options = SDWebImageRetryFailed;
         switch (_source.priority) {
             case WebPriorityLow:
                 options |= SDWebImageLowPriority;
@@ -113,7 +117,7 @@
                 options |= SDWebImageHighPriority;
                 break;
         }
-        
+
         switch (_source.cacheControl) {
             case WebCacheControlWeb:
                 options |= SDWebImageRefreshCached;
@@ -124,48 +128,52 @@
             case WebCacheControlImmutable:
                 break;
         }
-        
-        if (_onWebImageLoadStart) {
-            _onWebImageLoadStart(@{});
-            hasSentOnLoadStart = YES;
+
+        if (self.onWebImageLoadStart) {
+            self.onWebImageLoadStart(@{});
+            self.hasSentOnLoadStart = YES;
         } {
-            hasSentOnLoadStart = NO;
+            self.hasSentOnLoadStart = NO;
         }
-        hasCompleted = NO;
-        hasErrored = NO;
-        
-        [self sd_setImageWithURL:_source.url
-                placeholderImage:nil
-                         options:options
-                        progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
-                            if (self->_onWebImageProgress) {
-                                self->_onWebImageProgress(@{
-                                                       @"loaded": @(receivedSize),
-                                                       @"total": @(expectedSize)
-                                                       });
-                            }
-                        } completed:^(UIImage * _Nullable image,
-                                      NSError * _Nullable error,
-                                      SDImageCacheType cacheType,
-                                      NSURL * _Nullable imageURL) {
-                            if (error) {
-                                self->hasErrored = YES;
-                                if (self->_onWebImageError) {
-                                    self->_onWebImageError(@{});
-                                }
-                                if (self->_onWebImageLoadEnd) {
-                                    self->_onWebImageLoadEnd(@{});
-                                }
-                            } else {
-                                self->hasCompleted = YES;
-                                [self sendOnLoad:image];
-                                if (self->_onWebImageLoadEnd) {
-                                    self->_onWebImageLoadEnd(@{});
-                                }
-                            }
-                        }];
+        self.hasCompleted = NO;
+        self.hasErrored = NO;
+
+        [self downloadImage:_source options:options];
     }
 }
 
-@end
+- (void)downloadImage:(WebImageSource *) source options:(SDWebImageOptions) options {
+    __weak typeof(self) weakSelf = self; // Always use a weak reference to self in blocks
+    [self sd_setImageWithURL:_source.url
+            placeholderImage:nil
+                     options:options
+                    progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+                        if (weakSelf.onWebImageProgress) {
+                            weakSelf.onWebImageProgress(@{
+                                                           @"loaded": @(receivedSize),
+                                                           @"total": @(expectedSize)
+                                                           });
+                        }
+                    } completed:^(UIImage * _Nullable image,
+                                  NSError * _Nullable error,
+                                  SDImageCacheType cacheType,
+                                  NSURL * _Nullable imageURL) {
+                        if (error) {
+                            weakSelf.hasErrored = YES;
+                                if (weakSelf.onWebImageError) {
+                                    weakSelf.onWebImageError(@{});
+                                }
+                                if (weakSelf.onWebImageLoadEnd) {
+                                    weakSelf.onWebImageLoadEnd(@{});
+                                }
+                        } else {
+                            weakSelf.hasCompleted = YES;
+                            [weakSelf sendOnLoad:image];
+                            if (weakSelf.onWebImageLoadEnd) {
+                                weakSelf.onWebImageLoadEnd(@{});
+                            }
+                        }
+                    }];
+}
 
+@end
