@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, memo } from 'react'
 import PropTypes from 'prop-types'
 import {
   Platform,
@@ -14,57 +14,58 @@ const isAndroid = (Platform.OS === 'android')
 
 const WebImageViewNativeModule = isAndroid ? null : NativeModules.WebImageView
 
-const RNSDWebImage = forwardRef(
-  (
-    {
-      source,
-      onLoadStart,
-      onProgress,
-      onLoad,
-      onError,
-      onLoadEnd,
-      style,
-      children,
-      fallback,
-      ...props
-    },
-    ref
-  ) => {
-    const resolvedSource = Image.resolveAssetSource(source)
-    const isLocalImage = (typeof source === 'number')
-    if (isAndroid || isLocalImage || fallback ) {
-      return (
-        <Image
-          {...props}
-          style={style}
-          source={resolvedSource}
-          onLoadStart={onLoadStart}
-          onProgress={onProgress}
-          onLoad={onLoad}
-          onError={onError}
-          onLoadEnd={onLoadEnd}
-        />
-      )
-    }
-
+function WebImageBase({
+  source,
+  onLoadStart,
+  onProgress,
+  onLoad,
+  onError,
+  onLoadEnd,
+  style,
+  children,
+  fallback,
+  forwardedRef,
+  ...props
+}) {
+  const resolvedSource = Image.resolveAssetSource(source)
+  const isLocalImage = (typeof source === 'number')
+  if (isAndroid || isLocalImage || fallback ) {
     return (
-      <View style={[styles.imageContainer, style]} ref={ref}>
-        <WebImageView
-          {...props}
-          style={StyleSheet.absoluteFill}
-          source={resolvedSource}
-          onWebImageLoadStart={onLoadStart}
-          onWebImageProgress={onProgress}
-          onWebImageLoad={onLoad}
-          onWebImageError={onError}
-          onWebImageLoadEnd={onLoadEnd}
-        />
-        {children}
-      </View>
+      <Image
+        {...props}
+        style={style}
+        source={resolvedSource}
+        onLoadStart={onLoadStart}
+        onProgress={onProgress}
+        onLoad={onLoad}
+        onError={onError}
+        onLoadEnd={onLoadEnd}
+      />
     )
   }
-)
 
+  return (
+    <View style={[styles.imageContainer, style]} ref={forwardedRef}>
+      <WebImageView
+        {...props}
+        style={StyleSheet.absoluteFill}
+        source={resolvedSource}
+        onWebImageLoadStart={onLoadStart}
+        onWebImageProgress={onProgress}
+        onWebImageLoad={onLoad}
+        onWebImageError={onError}
+        onWebImageLoadEnd={onLoadEnd}
+      />
+      {children}
+    </View>
+  )
+}
+
+const WebImageMemo = memo(WebImageBase)
+
+const RNSDWebImage = forwardRef((props, ref) => (
+  <WebImageMemo forwardedRef={ref} {...props} />
+))
 
 RNSDWebImage.displayName = 'RNSDWebImage'
 
