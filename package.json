@@ -1,7 +1,7 @@
 {
   "name": "react-native-sdwebimage",
   "title": "React Native SDWebImage",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "SDWebImage for React Native iOS",
   "main": "index.js",
   "scripts": {
@@ -39,9 +39,9 @@
   },
   "devDependencies": {
     "fresh": ">=0.5.2",
-    "negotiator": ">=0.6.1",
+    "negotiator": "^0.6.2",
     "react": "^16.8.6",
-    "react-native": "^0.59.5"
+    "react-native": "^0.59.8"
   },
   "dependencies": {}
 }

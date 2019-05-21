@@ -21,9 +21,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'React'
-  s.dependency 'SDWebImage/Core'
-  s.dependency 'SDWebImage/GIF'
-  s.dependency 'SDWebImage/WebP'
-  s.dependency 'FLAnimatedImage'
+  s.dependency 'SDWebImage', '~> 5.0'
 end
 

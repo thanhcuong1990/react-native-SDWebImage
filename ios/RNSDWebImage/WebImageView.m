@@ -123,7 +123,7 @@
                 options |= SDWebImageRefreshCached;
                 break;
             case WebCacheControlCacheOnly:
-                options |= SDWebImageCacheMemoryOnly;
+                options |= SDWebImageFromCacheOnly;
                 break;
             case WebCacheControlImmutable:
                 break;
