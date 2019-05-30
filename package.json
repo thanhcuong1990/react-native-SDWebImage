@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "hhttps://github.com/thanhcuong1990/react-native-SDWebImage",
+  "homepage": "https://github.com/thanhcuong1990/react-native-SDWebImage",
   "bugs": {
     "url": "https://github.com/thanhcuong1990/react-native-SDWebImage/issues"
   },
