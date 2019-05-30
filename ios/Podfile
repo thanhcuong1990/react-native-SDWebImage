@@ -7,7 +7,7 @@ target 'RNSDWebImage' do
   inhibit_all_warnings!
 
   # Pods for RNSDWebImage
-  pod 'SDWebImage', '~> 5.0'
+  pod 'SDWebImage', '~> 5.0.4'
 
   rn_path = '../node_modules/react-native'
   pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
