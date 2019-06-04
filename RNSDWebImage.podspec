@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'React'
-  s.dependency 'SDWebImage', '~> 5.0.4'
+  s.dependency 'SDWebImage', '~> 5.0.5'
 end
 
