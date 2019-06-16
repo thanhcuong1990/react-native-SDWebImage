@@ -1,3 +1,9 @@
+# [1.1.5](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.1.4...v1.1.5) (2019-06-16)
+
+### Bug Fixes
+
+* Fix missing `FLAnimatedImage`.
+
 # [1.1.4](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.1.3...v1.1.4) (2019-06-16)
 
 ### Bug Fixes

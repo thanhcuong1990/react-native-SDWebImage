@@ -8,6 +8,7 @@ target 'RNSDWebImage' do
 
   # Pods for RNSDWebImage
   pod 'SDWebImage', '~> 4.4.7'
+  pod 'FLAnimatedImage', :git => 'https://github.com/Flipboard/FLAnimatedImage.git', :branch => 'master'
 
   rn_path = '../node_modules/react-native'
   pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"

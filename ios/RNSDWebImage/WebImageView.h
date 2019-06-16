@@ -4,7 +4,7 @@
 #import <React/RCTComponent.h>
 #import <React/RCTResizeMode.h>
 #import "WebImageSource.h"
-#import <SDWebImage/FLAnimatedImageView.h>
+#import <FLAnimatedImage/FLAnimatedImageView.h>
 
 @interface WebImageView : FLAnimatedImageView
 
