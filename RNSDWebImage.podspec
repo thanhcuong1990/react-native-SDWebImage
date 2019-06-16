@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'React'
   s.dependency 'SDWebImage', '~> 4.4.7'
-  s.dependency 'FLAnimatedImage', :git => 'https://github.com/Flipboard/FLAnimatedImage.git', :branch => 'master'
+  s.dependency 'FLAnimatedImage'
 end
 

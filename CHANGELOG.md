@@ -1,3 +1,9 @@
+# [1.1.6](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.1.5...v1.1.6) (2019-06-16)
+
+### Bug Fixes
+
+* Fix missing podspec issue.
+
 # [1.1.5](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.1.4...v1.1.5) (2019-06-16)
 
 ### Bug Fixes
