@@ -1,3 +1,9 @@
+# [1.1.4](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.1.3...v1.1.4) (2019-06-16)
+
+### Bug Fixes
+
+* Use SDWebImage 4.4.7 to reduce crashes (`SDWebImageDownloaderOperation.m line 410`).
+
 # [1.1.3](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.1.2...v1.1.3) (2019-06-05)
 
 ### Features
