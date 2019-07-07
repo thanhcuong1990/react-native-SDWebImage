@@ -24,4 +24,3 @@ Pod::Spec.new do |s|
   s.dependency 'SDWebImage', '~> 4.4.7'
   s.dependency 'FLAnimatedImage'
 end
-
