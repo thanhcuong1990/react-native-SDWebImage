@@ -3,6 +3,7 @@
 ### Features
 
 * Upgrade to support React Native 0.60.0
+* BREAKING CHANGES: You should upgrade React Native. See upgrade-helper: https://react-native-community.github.io/upgrade-helper/
 
 # [1.1.6](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.1.5...v1.1.6) (2019-06-16)
 
