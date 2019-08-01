@@ -40,12 +40,12 @@
   "devDependencies": {
     "braces": ">=2.3.1",
     "fresh": ">=0.5.2",
+    "lodash": "^4.17.15",
     "mem": "^5.1.1",
     "negotiator": "^0.6.2",
     "react": "^16.8.6",
-    "react-native": "^0.60.3",
-    "ws": "^7.1.0",
-    "lodash": ">=4.17.13"
+    "react-native": "^0.60.4",
+    "ws": "^7.1.1"
   },
   "dependencies": {}
 }

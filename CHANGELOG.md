@@ -1,3 +1,9 @@
+# [1.2.1](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.2.0...v1.2.1) (2019-08-01)
+
+### Features
+* Upgrade to support React Native 0.60.4
+
+
 # [1.2.0](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.1.6...v1.2.0) (2019-07-07)
 
 ### Features
