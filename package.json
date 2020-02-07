@@ -1,7 +1,7 @@
 {
   "name": "react-native-sdwebimage",
   "title": "React Native SDWebImage",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "SDWebImage for React Native iOS",
   "main": "index.js",
   "scripts": {
