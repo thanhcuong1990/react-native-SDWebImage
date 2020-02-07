@@ -1,3 +1,8 @@
+# [1.2.2](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.2.1...v1.2.2) (2020-02-07)
+
+### Features
+* Update SDWebImage version 4.4.8
+
 # [1.2.1](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.2.0...v1.2.1) (2019-08-01)
 
 ### Features
