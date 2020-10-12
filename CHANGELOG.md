@@ -1,3 +1,8 @@
+# [1.2.3](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.2.2...v1.2.3) (2020-10-12)
+
+### Features
+* Support to build with Xcode 12 (XCode 12 is required)
+
 # [1.2.2](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.2.1...v1.2.2) (2020-02-07)
 
 ### Features
