@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.framework    = 'UIKit'
   s.requires_arc = true
 
-  s.dependency 'React'
+  s.dependency 'React-Core'
   s.dependency 'SDWebImage', '~> 4.4.8'
   s.dependency 'FLAnimatedImage'
 end
