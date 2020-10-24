@@ -99,6 +99,16 @@ RNSDWebImage.preload = sources => {
   WebImageViewNativeModule.preload(sources)
 }
 
+RNSDWebImage.clearMemory = () => {
+  if (isAndroid) { return }
+  WebImageViewNativeModule.clearMemory()
+}
+
+RNSDWebImage.clearDisk = () => {
+  if (isAndroid) { return }
+  WebImageViewNativeModule.clearDisk()
+}
+
 RNSDWebImage.defaultProps = {
   resizeMode: RNSDWebImage.resizeMode.cover
 }
