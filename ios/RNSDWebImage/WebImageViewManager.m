@@ -2,6 +2,8 @@
 #import "WebImageView.h"
 
 #import <SDWebImage/SDWebImagePrefetcher.h>
+#import <SDWebImage/SDImageCache.h>
+#import <SDWebImage/SDImageCacheConfig.h>
 
 @implementation WebImageViewManager
 
@@ -31,6 +33,16 @@ RCT_EXPORT_METHOD(preload:(nonnull NSArray<WebImageSource *> *)sources)
     }];
 
     [[SDWebImagePrefetcher sharedImagePrefetcher] prefetchURLs:urls];
+}
+
+RCT_EXPORT_METHOD(clearMemory)
+{
+    [[SDImageCache sharedImageCache] clearMemory];
+}
+
+RCT_EXPORT_METHOD(clearDisk)
+{
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
 }
 
 @end
