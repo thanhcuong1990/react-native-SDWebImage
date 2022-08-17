@@ -4,11 +4,11 @@ import {
   Platform,
   NativeModules,
   requireNativeComponent,
-  ViewPropTypes,
   StyleSheet,
   View,
   Image
 } from 'react-native'
+import { ViewPropTypes } from 'deprecated-react-native-prop-types'
 
 const isAndroid = (Platform.OS === 'android')
 

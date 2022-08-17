@@ -1,3 +1,9 @@
+### Bug Fixes
+* Fix Invariant Violation: ViewPropTypes has been removed from React Native.
+
+# [1.3.0](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.2.5...v1.3.0) (2022-08-17)
+
+### Updates
 # [1.2.5](https://github.com/thanhcuong1990/react-native-SDWebImage/compare/v1.2.4...v1.2.5) (2021-10-20)
 
 ### Features
