@@ -33,20 +33,19 @@
   "license": "MIT",
   "licenseFilename": "LICENSE",
   "peerDependencies": {
+    "deprecated-react-native-prop-types": "*",
     "prop-types": "*",
     "react": "*",
-    "react-native": "*",
-    "deprecated-react-native-prop-types": "*"
+    "react-native": "*"
   },
   "devDependencies": {
     "braces": ">=2.3.1",
     "fresh": ">=0.5.2",
     "lodash": "^4.17.20",
-    "mem": "^8.0.0",
+    "mem": "^9.0.2",
     "negotiator": "^0.6.2",
-    "react": "^16.14.0",
-    "react-native": "^0.63.3",
-    "ws": "^7.3.1"
-  },
-  "dependencies": {}
+    "react": "^18.2.0",
+    "react-native": "^0.69.4",
+    "ws": "^8.8.1"
+  }
 }
