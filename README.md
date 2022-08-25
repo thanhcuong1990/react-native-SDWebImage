@@ -11,7 +11,7 @@
   <a href="https://www.npmjs.com/package/react-native-sdwebimage">
     <img src="https://badge.fury.io/js/react-native-sdwebimage.svg" alt="Current npm package version." />
   </a>
-    <a href="https://npm.im/react-native-immersive">
+    <a href="https://npm.im/react-native-sdwebimage">
     <img src="https://img.shields.io/npm/dm/react-native-sdwebimage.svg" alt="Current npm package download in last month." />
   </a>
   <a href="https://github.com/thanhcuong1990/react-native-SDWebImage/pulls">
