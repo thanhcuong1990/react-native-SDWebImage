@@ -16,7 +16,7 @@ target 'RNSDWebImage' do
 
   # Pods for RNSDWebImage
   pod 'SDWebImage', '~> 4.4.8'
-  pod 'FLAnimatedImage', git: 'https://github.com/Flipboard/FLAnimatedImage.git', branch: 'master'
+  pod 'FLAnimatedImage'
 end
 
 post_install do |installer|

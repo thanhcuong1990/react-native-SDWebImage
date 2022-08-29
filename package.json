@@ -35,7 +35,6 @@
   "peerDependencies": {
     "deprecated-react-native-prop-types": "*",
     "prop-types": "*",
-    "react": "*",
     "react-native": "*"
   },
   "devDependencies": {
@@ -44,8 +43,8 @@
     "lodash": "^4.17.20",
     "mem": "^9.0.2",
     "negotiator": "^0.6.2",
-    "react": "^18.2.0",
-    "react-native": "^0.69.4",
+    "react": "^18.0.0",
+    "react-native": "^0.69.5",
     "ws": "^8.8.1"
   }
 }
